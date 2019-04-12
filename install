@@ -55,6 +55,7 @@ check_curl() {
             apt-get install -y curl
             elif [ "$OS" == CentOS ]; then
             yum -y install curl
+            yum -y install deltarpm
          else
         if [ -x "$(command -v curl)" ]; then
         printf "CURL is installed on this server\n"
