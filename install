@@ -105,8 +105,5 @@ check_curl
 check_docker
 check_compose
 
-usermod -aG docker $(whoami)
-systemctl enable docker.service
-systemctl start docker.service
 
 exit 0;
