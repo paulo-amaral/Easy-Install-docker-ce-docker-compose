@@ -12,16 +12,13 @@ cat << "EOF"
 | | | | | | | |   | ' /|  _| | |_) |____| |   |  _|
 | |_| | |_| | |___| . \| |___|  _ <_____| |___| |___
 |____/ \___/ \____|_|\_\_____|_| \_\     \____|_____|
-
 EOF
 
 cat << EOF
 Open source Docker CE and Docker compose install
 Copyright 2018-$(date +'%Y'), PAULO SÉRGIO AMARAL
 https://github.com/paulo-amaral
-
 ===================================================
-
 EOF
 
 #Verify running as root:
