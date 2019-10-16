@@ -87,7 +87,7 @@ check_docker(){
 #check if docker Compose Installed
 check_compose(){
     if [ -x "$(command -v docker-compose)" ]; then
-        printf "Docker Compose Installed :)\n "
+        printf "Docker Compose Installed"
         docker-compose --version
         echo ""
     else
