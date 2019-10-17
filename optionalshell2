@@ -1,6 +1,6 @@
 # opt for docker
 mkdir -p /data/dockerstorage && mkdir -p /data/DockerRootDir && mkdir -p  /data/bigdrive/docker-tmp;
-cp daemon.json /etc/docker/daemon.json && systemctl daemon-reload && systemctl restart docker;
+cp -rf daemon.json /etc/docker/daemon.json && systemctl daemon-reload && systemctl restart docker;
 docker run -d -p 9000:9000  --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock  portainer/portainer;
 
 ## install nvdia docker 
