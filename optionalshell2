@@ -23,4 +23,4 @@ docker build . -t nvidia-tk:1.0.1;
 
 
 
-docker run -it  --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=2,3 nvidia-tk:1.0.1 nvidia-smi
+docker run -it --name=GPU-2-10022 -p 10022:22 --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=2,3 nvidia-tk:1.0.1 nvidia-smi
