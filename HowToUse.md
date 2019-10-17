@@ -20,7 +20,7 @@
 
 1.  add  interpreter 
 
-   ​	![image-20191017170232641](https://tva1.sinaimg.cn/large/006y8mN6gy1g81b16bdapj31a20u0n0f.jpg)
+   ​![image-20191017170232641](https://tva1.sinaimg.cn/large/006y8mN6gy1g81b16bdapj31a20u0n0f.jpg)
 
 2. choose the python env
 
