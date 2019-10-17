@@ -7,7 +7,7 @@ docker run -d -p 9100:9100 \
 prom/node-exporter \
 --path.procfs /host/proc \
 --path.sysfs /host/sys \
---collector.filesystem.ignored-mount-points "^/(sys|proc|dev|host|etc)($|/)"
+--collector.filesystem.ignored-mount-points "^/(sys|proc|dev|host|etc)($|/)";
 
 
 docker run \
@@ -19,11 +19,17 @@ docker run \
 --detach=true \
 --name=cadvisor \
 --net=host \
-google/cadvisor:latest
+google/cadvisor:latest;
 
 ## server 
 docker run -d -p 9090:9090 \
 -v prometheus/prometheus.yml:/etc/prometheus/prometheus.yml \
 --name prometheus \
 --net=host \
-prom/prometheus
+prom/prometheus;
+
+docker run -d -i -p 3000:3000 \
+-e "GF_SERVER_ROOT_URL=http://grafana.server.name" \
+-e "GF_SECURITY_ADMIN_PASSWORD=tinker--00" \
+--net=host \
+grafana/grafana;
