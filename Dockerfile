@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         software-properties-common\
         openssh-server         
 RUN add-apt-repository ppa:deadsnakes/ppa &&  \
-        apt-get install -y --no-install-recommends python3.7 && \
+        apt-get install -y --no-install-recommends python3.7  \
         python3-pip python-dev && \
         rm -rf /var/lib/apt/lists/*
 
