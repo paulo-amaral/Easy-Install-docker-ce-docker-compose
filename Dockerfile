@@ -1,6 +1,6 @@
 FROM nvidia/cuda:10.1-base
 
-RUN apt-get install software-properties-common && add-apt-repository ppa:ubuntu-toolchain-r/ppa 
+RUN apt install software-properties-common && add-apt-repository ppa:deadsnakes/ppa
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         python3.7\
