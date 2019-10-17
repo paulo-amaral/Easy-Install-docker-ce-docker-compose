@@ -17,7 +17,7 @@ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.li
 apt-get update && apt-get install -y nvidia-container-toolkit;
 systemctl restart docker;
 
-docker build . -t nvidia-tk:1.0.1;
+docker build . -t nvidia-tk:1.0.2;
 
 
 
