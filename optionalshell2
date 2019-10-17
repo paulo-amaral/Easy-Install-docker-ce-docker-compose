@@ -1,0 +1,26 @@
+# opt for docker
+mkdir -p /data/dockerstorage && mkdir -p /data/DockerRootDir && mkdir -p  /data/bigdrive/docker-tmp;
+cp daemon.json /etc/docker/daemon.json && systemctl daemon-reload && systemctl restart docker;
+docker run -d -p 9000:9000  --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock  portainer/portainer;
+
+## install nvdia docker 
+echo "install drivers "
+ubuntu-drivers autoinstall
+
+echo "installing nvdia docker "
+apt-get install -y gcc && apt-get install make
+apt-get install linux-headers-$(uname -r)
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+apt-get update && apt-get install -y nvidia-container-toolkit
+systemctl restart docker;
+
+docker build . -t nvidia-tk:1.0.1
+
+
+
+
+
+docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=2,3 nvidia/cuda:10.0-base nvidia-smi
