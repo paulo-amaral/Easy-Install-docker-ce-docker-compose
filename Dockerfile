@@ -9,7 +9,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa &&  \
         python3-pip python-dev && \
         rm -rf /var/lib/apt/lists/*
 
-RUN echo 'cloud' |passwd root --stdin
+RUN echo "root:cloud" | chpasswd
 
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config &&\
     sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd &&\
