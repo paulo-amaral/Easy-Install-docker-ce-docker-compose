@@ -1,14 +1,26 @@
-# Install Docker ce and Docker Compose - Bash script
-Script to Install Docker CE and compose on Debian/Ubuntu/CentOS
+# Prepare  a GPU\Dcoker and pycharm debug ENV
+Script to Install Docker CE and compose on Debian/Ubuntu/CentOS and  install  Nvidia docker 
 
 ### 1 - Download or clone:
-        git clone https://github.com/paulo-amaral/Install-docker-ce-docker-compose.git
+```shell
+    git clone https://github.com/whoszus/Install-docker-ce-docker-compose.git
+```
 
 ### 2 - Set permission:
-        chmod +x install
+```shell
+    cd Install-docker-ce-docker-compose 
+    chmod +x *.sh
+```
 
 ### 3 - Run script:
-        ./install
+```shell
+   # install docker-ce and docker compose
+   ./install.sh
+   # Nvidia Drivers ,notice that here will rebot you device
+   ./installNvidiaDriver.sh
+   # if you have a bigdrive mount on /data,this scrpit will mv the docker root to /data ,or plz edit the script 
+   ./installDockerEnv.sh
+```
 
 
 And it all fine ;)
