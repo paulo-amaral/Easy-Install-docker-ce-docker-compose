@@ -23,4 +23,4 @@ docker build . -t nvidia-tk:1.0.1;
 
 
 
-docker run -it -d  --name=GPU-2-10022 -p 10022:22 --gpus '"device=1,2"' nvidia-tk:1.0.1 /bin/bash
+docker run -d  --name=GPU-2-10022 -P --gpus '"device=1,2"' nvidia-tk:1.0.2
