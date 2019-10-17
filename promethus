@@ -1,0 +1,29 @@
+## both 
+docker run -d -p 9100:9100 \
+-v "/proc:/host/proc" \
+-v "/sys:/host/sys" \
+-v "/:/rootfs" \
+--net=host \
+prom/node-exporter \
+--path.procfs /host/proc \
+--path.sysfs /host/sys \
+--collector.filesystem.ignored-mount-points "^/(sys|proc|dev|host|etc)($|/)"
+
+
+docker run \
+--volume=/:/rootfs:ro \
+--volume=/var/run:/var/run:rw \
+--volume=/sys:/sys:ro \
+--volume=/var/lib/docker/:/var/lib/docker:ro \
+--publish=8080:8080 \
+--detach=true \
+--name=cadvisor \
+--net=host \
+google/cadvisor:latest
+
+## server 
+docker run -d -p 9090:9090 \
+-v prometheus/prometheus.yml:/etc/prometheus/prometheus.yml \
+--name prometheus \
+--net=host \
+prom/prometheus

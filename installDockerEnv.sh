@@ -19,4 +19,4 @@ systemctl restart docker;
 
 docker build . -t nvidia-tk:1.0.2;
 
-docker run -d  --name=GPU-2-10022 -P --gpus '"device=1,2"' nvidia-tk:1.0.2
+docker run -d  --name=GPU-2-10022 -P --gpus '"device=1"' nvidia-tk:1.0.2
