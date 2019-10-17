@@ -23,7 +23,7 @@ google/cadvisor:latest;
 
 ## server 
 docker run -d -p 9090:9090 \
--v prometheus/prometheus.yml:/etc/prometheus/prometheus.yml \
+-v /home/tinker/github/Install-docker-ce-docker-compose/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml \
 --name prometheus \
 --net=host \
 prom/prometheus;

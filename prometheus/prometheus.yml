@@ -61,6 +61,10 @@ scrape_configs:
       - 'tasks.node-exporter'
       type: 'A'
       port: 9100
-    
-#     static_configs:
-#          - targets: ['node-exporter:9100']
+  - job_name: 'gpu-exporter'
+
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
+
+    static_configs:
+         - targets: ['localhost:9100']
