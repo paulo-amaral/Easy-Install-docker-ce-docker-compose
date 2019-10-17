@@ -1,11 +1,12 @@
 FROM nvidia/cuda:10.1-base
 
-RUN apt install software-properties-common && add-apt-repository ppa:deadsnakes/ppa
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+        software-properties-common\
         python3.7\
         openssh-server\
         python3-pip python-dev && \
+        add-apt-repository ppa:deadsnakes/ppa && \
     rm -rf /var/lib/apt/lists/*
 
 RUN echo 'cloud' |passwd root --stdin
