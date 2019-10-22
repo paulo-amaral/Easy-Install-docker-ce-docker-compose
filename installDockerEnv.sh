@@ -17,6 +17,6 @@ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.li
 apt-get update && apt-get install -y nvidia-container-toolkit;
 systemctl restart docker;
 
-docker build . -t nvidia-tk:1.0.2;
+docker build . -t nvidia-tk:1.0.3;
 
-docker run -d  --name=GPU-2-10022 -P --gpus '"device=1"' nvidia-tk:1.0.2
+docker run -d  --restart==always --name=GPU-2-10022 -P --gpus '"device=1"' nvidia-tk:1.0.3
