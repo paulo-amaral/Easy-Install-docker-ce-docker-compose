@@ -1,18 +1,20 @@
-# Prepare  a GPU\Dcoker and pycharm debug ENV
+# Machine Learning Env 
+
+### Install Nvidia Docker 
+
 Script to Install Docker CE and compose on Debian/Ubuntu/CentOS and  install  Nvidia docker 
 
-### 1 - Download or clone:
+#### 1. Download or clone:
 ```shell
-    git clone https://github.com/whoszus/Install-docker-ce-docker-compose.git
+git clone https://github.com/whoszus/Install-docker-ce-docker-compose.git
 ```
 
-### 2 - Set permission:
+#### 2. Set permission:
 ```shell
-    cd Install-docker-ce-docker-compose 
-    chmod +x *.sh
+cd Install-docker-ce-docker-compose && chmod +x *.sh
 ```
 
-### 3 - Run script:
+#### 3. Run script:
 ```shell
    # install docker-ce and docker compose
    ./install.sh
@@ -22,7 +24,9 @@ Script to Install Docker CE and compose on Debian/Ubuntu/CentOS and  install  Nv
    ./installDockerEnv.sh
 ```
 
+### How to use it
 
-And it all fine ;)
-        
+请参考：[Manual](https://github.com/whoszus/Install-docker-ce-docker-compose/blob/master/HowToUse.md)
+
+
 
