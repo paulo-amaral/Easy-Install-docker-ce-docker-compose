@@ -1,18 +1,28 @@
 ### Manual
 
+### note 
+
+1. 目前版本内预装了驱动、cudnn 7、cuda10.1; 详情可以参考[nvidia dockerfile](https://gitlab.com/nvidia/container-images/cuda/blob/master/dist/ubuntu18.04/10.1/devel/cudnn7/Dockerfile)
+2. 预装了pip3.7 ,pip2.7, python3.7,python2.7
+3. 如有其它需求可以写到dockerfile 中，提交PR；
+
 #### How to use
 
-1. Log in to the portainer  to get the ssh port of the container . http://172.16.101.221:9000 
+1. 可以直接通过SSH 连接上去，例如 ip 是172.16.101.221 端口是32780
 
-   ![image-20191017163618544](https://tva1.sinaimg.cn/large/006y8mN6gy1g81a9wmlb8j322c0u0wmn.jpg)
+   ~~~
+   ssh 172.16.101.221 -p 32780
+   ~~~
 
-2. Through the potainer , go directly into the container
+2. 修改密码
 
-   ![Oct-17-2019 16-48-55](https://tva1.sinaimg.cn/large/006y8mN6gy1g81anxhk49g30hs07d1kz.gif)
+   ~~~shell
+   passwd root
+   ~~~
 
-3. Connected via ssh terminal
+3. 上传代码或者使用以下方式调试代码 pycharm 连接服务器debug 
 
-![Oct-17-2019 16-54-38](pic/Oct-17-2019 16-54-38.gif)
+
 
 
 
@@ -20,7 +30,7 @@
 
 1.  add  interpreter 
 
-   ​![image-20191017170232641](https://tva1.sinaimg.cn/large/006y8mN6gy1g81b16bdapj31a20u0n0f.jpg)
+   ![image-20191017170232641](https://tva1.sinaimg.cn/large/006y8mN6gy1g81b16bdapj31a20u0n0f.jpg)
 
 2. choose the python env
 
