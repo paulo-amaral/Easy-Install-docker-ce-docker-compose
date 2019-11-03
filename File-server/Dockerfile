@@ -1,6 +1,6 @@
 ### dockerfile for files-server
 
-FROM openresty-ubuntu:xenial
+FROM openresty/openresty:1.15.8.2-4-bionic-nosse42
 
 # install lua  modules;
 RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-upload
