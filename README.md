@@ -11,6 +11,6 @@ Script to Install Docker CE and compose on Debian/Ubuntu/CentOS
         ./install
 
 
-And it all fine ;)
+And it's all fine ;)
         
 
