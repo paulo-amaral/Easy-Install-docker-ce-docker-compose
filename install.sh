@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+apt-get install -y curl
 
 cat << "EOF"
  ___ _   _ ____ _____  _    _     _
@@ -64,11 +65,10 @@ fi
 
 # composer download
 downloadcomposer() {
-$COMPOSE_PATH='/usr/local/bin/docker-compose'
     export COMPOSE_VERSION=`git ls-remote http://github.com/docker/compose | grep refs/tags | grep -oP "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | tail -n 1`
     sh -c "curl -L http://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose"
-    sh -c "curl -L http://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
-    chmod a+rx $COMPOSE_PATH
+    sh -c "curl -L http://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose"
+    chmod a+rx '/usr/local/bin/docker-compose' 
 }
 
 #check if docker installed

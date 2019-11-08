@@ -1,16 +1,31 @@
-# Install Docker ce and Docker Compose - Bash script
-Script to Install Docker CE and compose on Debian/Ubuntu/CentOS
+# Machine Learning Env 
 
-### 1 - Download or clone:
-        git clone https://github.com/paulo-amaral/Install-docker-ce-docker-compose.git
+### Install Nvidia Docker 
 
-### 2 - Set permission:
-        chmod +x install
+Script to Install Docker CE and compose on Debian/Ubuntu/CentOS and  install  Nvidia docker 
 
-### 3 - Run script:
-        ./install
+#### 1. Download or clone:
+```shell
+git clone https://github.com/whoszus/Install-docker-ce-docker-compose.git
+```
 
+#### 2. Set permission:
+```shell
+cd Install-docker-ce-docker-compose && chmod +x *.sh
+```
 
-And it's all fine ;)
-        
+#### 3. Run script:
+```shell
+   # install docker-ce and docker compose
+   ./install.sh
+   # Nvidia Drivers ,notice that here will rebot you device
+   ./installNvidiaDriver.sh
+   # if you have a bigdrive mount on /data,this scrpit will mv the docker root to /data ,or plz edit the script 
+   ./installDockerEnv.sh
+```
+
+### How to use it
+
+请参考：[Manual](https://github.com/whoszus/Install-docker-ce-docker-compose/blob/master/HowToUse.md)
+
 
