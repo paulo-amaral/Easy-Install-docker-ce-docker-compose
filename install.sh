@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-apt-get install -y curl
+#apt-get install -y curl
 
 cat << "EOF"
  ___ _   _ ____ _____  _    _     _
